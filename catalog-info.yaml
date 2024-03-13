@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: colonial-salamander-java-springboot-gitops
+  description: This is GitOps manifest for colonial-salamander-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: colonial-salamander-java-springboot
+    janus-idp.io/tekton: colonial-salamander-java-springboot 
+    backstage.io/kubernetes-id: colonial-salamander-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:colonial-salamander-java-springboot
